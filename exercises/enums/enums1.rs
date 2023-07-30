@@ -9,7 +9,11 @@ enum Message {
     Quit,
     Echo,
     Move,
+<<<<<<< HEAD
     ChangeColor,
+=======
+    ChangeColor
+>>>>>>> cd9767b11610a79f40b942a68e785d409bbd6ca0
 }
 
 fn main() {

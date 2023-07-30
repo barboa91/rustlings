@@ -7,11 +7,18 @@
 #[derive(Debug)]
 enum Message {
     // TODO: define the different variants used below
+<<<<<<< HEAD
     Move {x:i32,y:i32},
     Echo(String),
     ChangeColor(i32,i32,i32),
+=======
+    Move{x:i32,y:i32},
+    Echo(String),
+    ChangeColor(u8,i32,i32),
+>>>>>>> cd9767b11610a79f40b942a68e785d409bbd6ca0
     Quit
 }
+
 
 impl Message {
     fn call(&self) {
