@@ -8,13 +8,42 @@
 fn trim_me(input: &str) -> String {
     // TODO: Remove whitespace from both ends of a string!
     // ???
-    let start::bool = false;
-    for (x,i)in input{
-        if x == " "{
+    let mut start_endl:usize  = input.len();
+    let mut startl:usize  = 0;
 
+    let endl:usize  = input.len();
+
+    let mut at_end = false;
+    let mut at_start = true;
+
+    let fake = String::from(input);
+    let mut begining_white:&str;
+    let bytes = input.as_bytes();
+    for (x,&i)in bytes.iter().enumerate(){
+        if i != b' '{
+            if at_start{
+                startl = x;
+            }
+            at_start = false;
+
+            at_end=false;
         }
+
+        if i == b' '{
+            if!at_end{
+                start_endl = x
+            }
+            at_end=true; 
+        }
+
     }
-    String::from("farts")
+
+    if at_end == false {
+        start_endl = endl
+    }
+
+    let fartman = &fake[startl..start_endl];
+    fartman.to_string()
 }
 
 fn compose_me(input: &str) -> String {
@@ -28,7 +57,10 @@ fn compose_me(input: &str) -> String {
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons"!
     // ???
-    String::from("balloons")
+    let mut s = String::from(input);
+    s.replace_range(input.find("cars").unwrap_or(s.len())..input.find("cars").unwrap_or(s.len())+4,"balloons");
+    
+    String::from(s)
 
 }
 
