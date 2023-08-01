@@ -57,7 +57,8 @@ fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons"!
     // ???
     let mut s = String::from(input);
-    s.replace_range(input.find("cars").unwrap_or(s.len())..input.find("cars").unwrap_or(s.len())+4,"balloons");
+    // s.replace_range(input.find("cars").unwrap_or(s.len())..input.find("cars").unwrap_or(s.len())+4,"balloons");
+    s = s.replace("cars","balloons");
     
     String::from(s)
 
