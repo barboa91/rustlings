@@ -71,7 +71,7 @@ mod tests {
     #[test]
     fn test_match_message_call() {
         let mut state = State {
-            quit: false,
+            quit: false ,
             position: Point { x: 0, y: 0 },
             color: (0, 0, 0),
             message: "hello world".to_string(),
