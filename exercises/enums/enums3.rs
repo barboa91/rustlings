@@ -33,7 +33,7 @@ impl State {
     }
 
     fn quit(&mut self) {
-        self.quit = true;
+        true;
     }
 
     fn echo(&mut self, s: String) { self.message = s }
@@ -48,10 +48,10 @@ impl State {
         // Remember: When passing a tuple as a function argument, you'll need
         // extra parentheses: fn function((t, u, p, l, e))
         match message {
-            quit=>self.quit,
+            quit=>(self.quit),
             // position=>self.move_position(),
             // echo=>self.echo(),
-            color=>self.change_color(self.color),
+            color=>self.change_color((self.color)),
         }
 
     }
