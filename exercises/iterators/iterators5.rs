@@ -1,8 +1,9 @@
 // iterators5.rs
 //
-// Let's define a simple model to track Rustlings exercise progress. Progress
-// will be modelled using a hash map. The name of the exercise is the key and
-// the progress is the value. Two counting functions were created to count the
+// Let's define a simple model to track Rustlings exercise progress. 
+// Progress will be modelled using a hash map.
+// The name of the exercise is the key and the progress is the value.
+// Two counting functions were created to count the
 // number of exercises with a given progress. Recreate this counting
 // functionality using iterators. Try not to use imperative loops (for, while).
 // Only the two iterator methods (count_iterator and count_collection_iterator)
@@ -35,7 +36,8 @@ fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
 fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
     // map is a hashmap with String keys and Progress values.
     // map = { "variables1": Complete, "from_str": None, ... }
-    todo!();
+   map.iter().filter(|&(x,y)| y==&value).count()
+
 }
 
 fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
@@ -54,7 +56,9 @@ fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Pr
     // collection is a slice of hashmaps.
     // collection = [{ "variables1": Complete, "from_str": None, ... },
     //     { "variables2": Complete, ... }, ... ]
-    todo!();
+    let x=collection.iter();
+    return x.for_each(|x| { x.iter().filter(|&(x,y)| y==&value).count()})
+
 }
 
 #[cfg(test)]
